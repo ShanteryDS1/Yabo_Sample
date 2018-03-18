@@ -5,21 +5,39 @@
             <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVHD" build_result="0" update_result="3" update_time="0"/>
-            <Task name="Bitgen" build_result="0" update_result="3" update_time="0"/>
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1521340989"/>
         </Milestone>
-        <Milestone name="Map" build_result="0" build_time="0">
-            <Task name="Map" build_result="0" update_result="3" update_time="0"/>
-            <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
-            <Task name="MapVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
+        <Milestone name="Map" build_result="2" build_time="1521340975">
+            <Task name="Map" build_result="2" update_result="0" update_time="1521340975"/>
+            <Task name="MapTrace" build_result="2" update_result="0" update_time="1521340976"/>
+            <Task name="MapVerilogSimFile" build_result="2" update_result="0" update_time="1521340978"/>
             <Task name="MapVHDLSimFile" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="0" build_time="0">
-            <Task name="PAR" build_result="0" update_result="3" update_time="0"/>
-            <Task name="PARTrace" build_result="0" update_result="3" update_time="0"/>
-            <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
+        <Milestone name="PAR" build_result="2" build_time="1521340983">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1521340983"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1521340984"/>
+            <Task name="IOTiming" build_result="2" update_result="0" update_time="1521340986"/>
         </Milestone>
-        <Milestone name="Translate" build_result="0" build_time="0">
-            <Task name="Translate" build_result="0" update_result="3" update_time="0"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1521340872">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1521340872"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1521340872"/>
         </Milestone>
+        <Milestone name="TOOL_Report" build_result="0" build_time="0">
+            <Task name="HDLE" build_result="2" update_result="0" update_time="1521340844"/>
+            <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
+            <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Report name=".vdbs/Yabo_Sample_XP2_144_impl1_map.vdb" last_build_time="1521340975" last_build_size="53022"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.bgn" last_build_time="1521340989" last_build_size="3529"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.ior" last_build_time="1521340986" last_build_size="1875"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.jed" last_build_time="1521340989" last_build_size="1270158"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.lsedata" last_build_time="1521340872" last_build_size="7037"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.ncd" last_build_time="1521340983" last_build_size="35597"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.ngd" last_build_time="1521340872" last_build_size="34329"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.tw1" last_build_time="1521340976" last_build_size="4227"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.twr" last_build_time="1521340984" last_build_size="13439"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_map.ncd" last_build_time="1521340974" last_build_size="29743"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_mapvo.sdf" last_build_time="1521340978" last_build_size="19218"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_mapvo.vo" last_build_time="1521340978" last_build_size="25317"/>
     </Strategy>
 </BuildStatus>
