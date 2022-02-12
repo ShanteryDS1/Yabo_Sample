@@ -24,20 +24,20 @@ reg [ 2:0] r_disp_row;
 reg [ 7:0] r_wait_time_100us;
 
 localparam DISP_TICK  = 12'd2500; // 25MHz
-localparam DISP_TIME  = 8'd100; // 0.1ms
-localparam BLANK_TIME = 8'd10; // 0.1ms
+localparam DISP_TIME  = 8'd35; // 0.1ms 60
+localparam BLANK_TIME = 8'd1;  // 0.1ms
 localparam DISP_ROW   = 3'd7;
 
-localparam ST_IDLE = 3'h1;
-localparam ST_GET  = 3'h2;
-localparam ST_DISP = 3'h3;
-localparam ST_NEXT = 3'h4;
+localparam ST_IDLE = 8'h1;
+localparam ST_GET  = 8'h2;
+localparam ST_DISP = 8'h3;
+localparam ST_NEXT = 8'h4;
 
 localparam TRUE  = 1'b1;
 localparam FALSE = 1'b0;
 
-assign Col = (r_state == ST_DISP) ? image_mem[r_disp_row] : 8'h00;
-assign Row = (r_state == ST_DISP) ? 8'h01 << r_disp_row : 8'd00;
+assign Col = image_mem[r_disp_row];
+assign Row = ~((r_state == ST_DISP) ? 8'h01 << r_disp_row : 8'd00);
 
 always @(posedge mclock) begin
   if (mreset) begin
@@ -55,7 +55,6 @@ always @(posedge mclock) begin
         Data_o <= 8'hxx;
         ack    <= FALSE;
       end
-//      image_mem <= image_mem;
     end
   end
 end

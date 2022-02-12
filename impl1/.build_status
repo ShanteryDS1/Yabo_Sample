@@ -4,43 +4,45 @@
         <Milestone name="Export" build_result="0" build_time="0">
             <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
-            <Task name="TimingSimFileVHD" build_result="0" update_result="3" update_time="0"/>
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1644591200"/>
+            <Task name="TimingSimFileVHD" build_result="0" update_result="2" update_time="1644647997"/>
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1644648001"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1644591191">
-            <Task name="Map" build_result="2" update_result="0" update_time="1644591191"/>
-            <Task name="MapTrace" build_result="0" update_result="2" update_time="1644591191"/>
-            <Task name="MapVerilogSimFile" build_result="0" update_result="2" update_time="1644591191"/>
+        <Milestone name="Map" build_result="2" build_time="1644647989">
+            <Task name="Map" build_result="2" update_result="0" update_time="1644647989"/>
+            <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
+            <Task name="MapVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVHDLSimFile" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1644591197">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1644591197"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1644591198"/>
-            <Task name="IOTiming" build_result="0" update_result="2" update_time="1644591197"/>
+        <Milestone name="PAR" build_result="2" build_time="1644647997">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1644647997"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1644647999"/>
+            <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1644591189">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1644591189"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1644591200"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1644647987">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1644647987"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1644648001"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="0" update_result="2" update_time="1644591178"/>
-            <Task name="SSO" build_result="0" update_result="2" update_time="1644591189"/>
-            <Task name="PIODRC" build_result="0" update_result="2" update_time="1644591189"/>
-            <Task name="BKM" build_result="0" update_result="2" update_time="1644591178"/>
-            <Task name="DEC" build_result="0" update_result="2" update_time="0"/>
+            <Task name="HDLE" build_result="0" update_result="3" update_time="0"/>
+            <Task name="BKM" build_result="0" update_result="3" update_time="0"/>
+            <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
+            <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
+            <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Report name=".vdbs/Yabo_Sample_XP2_144_impl1_map.vdb" last_build_time="1644591191" last_build_size="71112"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.bgn" last_build_time="1644591200" last_build_size="3604"/>
+        <Report name=".vdbs/Yabo_Sample_XP2_144_impl1_map.vdb" last_build_time="1644647989" last_build_size="611873"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.bgn" last_build_time="1644648001" last_build_size="3881"/>
         <Report name="Yabo_Sample_XP2_144_impl1.ior" last_build_time="1521340986" last_build_size="1875"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.jed" last_build_time="1644591200" last_build_size="1269245"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.lsedata" last_build_time="1644591188" last_build_size="103234"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.ncd" last_build_time="1644591197" last_build_size="123575"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.ngd" last_build_time="1644591189" last_build_size="103058"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.jed" last_build_time="1644648001" last_build_size="1270131"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.lsedata" last_build_time="1644647982" last_build_size="2453380"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.ncd" last_build_time="1644647997" last_build_size="1709201"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.ngd" last_build_time="1644647987" last_build_size="1369356"/>
         <Report name="Yabo_Sample_XP2_144_impl1.tw1" last_build_time="1521340976" last_build_size="4227"/>
-        <Report name="Yabo_Sample_XP2_144_impl1.twr" last_build_time="1644591198" last_build_size="46524"/>
-        <Report name="Yabo_Sample_XP2_144_impl1_map.ncd" last_build_time="1644591190" last_build_size="83510"/>
+        <Report name="Yabo_Sample_XP2_144_impl1.twr" last_build_time="1644647998" last_build_size="90169"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_map.ncd" last_build_time="1644647988" last_build_size="1158575"/>
         <Report name="Yabo_Sample_XP2_144_impl1_mapvo.sdf" last_build_time="1521340978" last_build_size="19218"/>
         <Report name="Yabo_Sample_XP2_144_impl1_mapvo.vo" last_build_time="1521340978" last_build_size="25317"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_vho.sdf" last_build_time="1644637421" last_build_size="2921044"/>
+        <Report name="Yabo_Sample_XP2_144_impl1_vho.vho" last_build_time="1644637421" last_build_size="2459132"/>
     </Strategy>
 </BuildStatus>
-                       
+                   

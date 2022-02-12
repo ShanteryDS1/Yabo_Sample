@@ -29,8 +29,8 @@ module fpga_top(
   inout  io5,
   inout  io6,
   // LED出力
-  output led1,
-  output led2,
+  output reg led1,
+  output reg led2,
   // SW入力
   input  sw,
   // リセット入力
@@ -70,8 +70,8 @@ module fpga_top(
   inout  devlink7,
   inout  devlink8,
   inout  devlink9,
-	// クロック入力
-	input  clock
+  // クロック入力
+  input  clock
 );
 
 reg r_CS;
@@ -81,6 +81,8 @@ reg [7:0] r_Address;
 reg [7:0] r_Data_i;
 reg [3:0] r_STRB;
 wire      w_ack;
+
+reg [7:0] r_state;
 
 assign ad_din    = ad_dout;
 assign ad_cs     = 1'b0;
@@ -102,8 +104,8 @@ assign io3       = 1'b0;
 assign io4       = 1'b0;
 assign io5       = 1'b0;
 assign io6       = 1'b0;
-assign led1      = sw;
-assign led2      = reset1 || reset2;
+//assign led1      = sw;
+//assign led2      = reset1 || reset2;
 assign mem_sclk  = mem_cmd || mem_dat3 || mem_dat2 || mem_dat1 || mem_dat0;
 assign pc_out1   = 1'b0;
 assign pc_out2   = 1'b0;
@@ -128,8 +130,18 @@ assign devlink7  = 1'b0;
 assign devlink8  = 1'b0;
 assign devlink9  = 1'b0;
 
-always @(posedge mclock) begin
-  if (mreset) begin
+always @(posedge clock) begin
+  if (~sw) begin
+    led1 <= 1'b1;
+    led2 <= 1'b0;
+  end else begin
+    led1 <= ~led1;
+    led2 <= ~led2;
+  end
+end
+
+always @(posedge clock) begin
+  if (~sw) begin
     r_CS      <= 1'b0;
     r_Write   <= 1'b0;
     r_Read    <= 1'b0;
@@ -183,7 +195,7 @@ always @(posedge mclock) begin
         r_Write   <= 1'b1;
         r_Read    <= 1'b0;
         r_Address <= 8'h02;
-        r_Data_i  <= 8'h03;
+        r_Data_i  <= 8'h04;
         r_state   <= r_state + 8'h01;
       end
       8'h07 : begin
@@ -199,7 +211,7 @@ always @(posedge mclock) begin
         r_Write   <= 1'b1;
         r_Read    <= 1'b0;
         r_Address <= 8'h03;
-        r_Data_i  <= 8'h04;
+        r_Data_i  <= 8'h08;
         r_state   <= r_state + 8'h01;
       end
       8'h09 : begin
@@ -215,7 +227,7 @@ always @(posedge mclock) begin
         r_Write   <= 1'b1;
         r_Read    <= 1'b0;
         r_Address <= 8'h04;
-        r_Data_i  <= 8'h05;
+        r_Data_i  <= 8'h10;
         r_state   <= r_state + 8'h01;
       end
       8'h0B : begin
@@ -231,7 +243,7 @@ always @(posedge mclock) begin
         r_Write   <= 1'b1;
         r_Read    <= 1'b0;
         r_Address <= 8'h05;
-        r_Data_i  <= 8'h06;
+        r_Data_i  <= 8'h20;
         r_state   <= r_state + 8'h01;
       end
       8'h0D : begin
@@ -247,10 +259,26 @@ always @(posedge mclock) begin
         r_Write   <= 1'b1;
         r_Read    <= 1'b0;
         r_Address <= 8'h06;
-        r_Data_i  <= 8'h07;
+        r_Data_i  <= 8'h40;
         r_state   <= r_state + 8'h01;
       end
       8'h0F : begin
+        r_CS      <= 1'b0;
+        r_Write   <= 1'b0;
+        r_Read    <= 1'b0;
+        r_Address <= 8'h00;
+        r_Data_i  <= 8'h00;
+        r_state   <= r_state + 8'h01;
+      end
+      8'h10 : begin
+        r_CS      <= 1'b1;
+        r_Write   <= 1'b1;
+        r_Read    <= 1'b0;
+        r_Address <= 8'h07;
+        r_Data_i  <= 8'h80;
+        r_state   <= r_state + 8'h01;
+      end
+      8'h11 : begin
         r_CS      <= 1'b0;
         r_Write   <= 1'b0;
         r_Read    <= 1'b0;
@@ -263,8 +291,8 @@ always @(posedge mclock) begin
 end
 
 dotmatrix dotmatrix_u(
-  .mclock(mclock),     // input 
-  .mreset(mreset),     // input 
+  .mclock(clock),     // input 
+  .mreset(~sw),     // input 
   .CS(r_CS),           // input 
   .Write(r_Write),     // input 
   .Read(r_Read),       // input 
@@ -273,8 +301,8 @@ dotmatrix dotmatrix_u(
   .STRB(r_STRB),       // input [3:0]
   .Data_o(),           // output [7:0]
   .ack(w_ack),              // output 
-  .Row(led_a),              // output [7:0]
-  .Col(led_k)               // output [7:0]
+  .Row(led_k),              // output [7:0]
+  .Col(led_a)               // output [7:0]
 );
 
 
