@@ -1,5 +1,0 @@
-#Start recording tcl command: 3/17/2018 21:26:12
-#Project Location: C:/Users/user1/Documents/Yabo_Sample; Project name: Yabo_Sample_XP2_144
-prj_project new -name "Yabo_Sample_XP2_144" -impl "impl1" -dev LFXP2-5E-5TN144C -synthesis "lse"
-prj_project save
-#Stop recording: 3/17/2018 21:58:58
